@@ -8,7 +8,7 @@ import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
     public static final String PREFS_NAME = "FlexcilityPrefs";
-    public static final String USER_MOBILE_NO = "com.jomcode.flexcility.USER_MOBILE_NO";
+    public static final String USER_PHONE_NUMBER = "com.jomcode.flexcility.USER_PHONE_NUMBER";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
