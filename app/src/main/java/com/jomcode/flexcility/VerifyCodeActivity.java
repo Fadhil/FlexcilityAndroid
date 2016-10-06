@@ -33,7 +33,7 @@ public class VerifyCodeActivity extends AppCompatActivity {
         ConnectivityManager connMgr = (ConnectivityManager)
                 getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-        if (networkInfo != null && networkInfo.isConnected()){
+        if (networkInfo == null && networkInfo.isConnected()){
             new RandomWordApiTask().execute(API_URL);
         } else {
 
