@@ -1,10 +1,36 @@
 <resources>
     <string name="app_name">Flexcility</string>
-    <string name="welcome_message">Welcome to Flexcility</string>
+    <string name="welcome_message">Flexcility</string>
     <string name="motto">A Facilities Maintenance Management App</string>
+    <string name="email_prompt">Please sign in with your email address and password</string>
+    <string name="email_hint">your@email.com</string>
     <string name="phone_number_prompt">Enter your phone number</string>
     <string name="phone_number_hint">60126893949</string>
     <string name="send_sms_button">Send SMS Verification</string>
-    <string name="could_not_connect_to_network">Could not connect to network</string>
+    <string name="send_email_button_text">Send Email Verification</string>
+    <string name="connection_error">Connection Error</string>
+    <string name="could_not_connect_to_network">No network detected. Check your connection settings and try again.</string>
+    <string name="check_connection_and_try_again">You might want to check your connection settings and try again. </string>
     <string name="verification_code_sent">A verification code has been sent to the number </string>
+
+    <string name="ok">OK</string>
+    <string name="hallo_faruq">Hallo Faruq!</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>
