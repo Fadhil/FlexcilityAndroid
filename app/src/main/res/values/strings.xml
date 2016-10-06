@@ -29,7 +29,7 @@
         completions."
     </string>
     <string name="title_activity_login">Sign in</string>
-    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="title_activity_dashboard">Dashboard</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
