@@ -342,10 +342,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
             if (success) {
                 Log.d("DEBUG", "Successfully Logged in");
-                //finish();
+                mLoginFormView.setVisibility(View.GONE);
                 Intent intent = new Intent(context, DashboardActivity.class);
                 startActivity(intent);
             } else {
+                // Here's how to show a Dialog Error popup
+                //ConnectivityErrorFragment error = new ConnectivityErrorFragment();
+                //error.show(getSupportFragmentManager(), "connectivity_error");
                 Log.d("DEBUG", "Errors Happened");
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
                 mPasswordView.requestFocus();
