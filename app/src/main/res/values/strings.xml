@@ -14,7 +14,7 @@
     <string name="verification_code_sent">A verification code has been sent to the number </string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dashboard_fragment">Dashboard Fragment</string>
     <string name="ok">OK</string>
     <string name="hallo_faruq">Hallo Faruq!</string>
     <string name="prompt_email">Email</string>
@@ -29,10 +29,20 @@
         completions."
     </string>
     <string name="title_activity_login">Sign in</string>
-    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="title_activity_dashboard">Dashboard</string>
 
+    <string name="communicate">Communicate</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="projects">Projects</string>
+    <string name="work_requests">Work Requests</string>
+    <string name="work_orders">Work Orders></string>
+    <string name="share">Share</string>
+    <string name="send">Send</string>
+    <string name="email_placeholder">email@server.com</string>
+
+    <string name="header_image_description">Header image for navigation drawer</string>
 
     <string name="action_settings">Settings</string>
 </resources>

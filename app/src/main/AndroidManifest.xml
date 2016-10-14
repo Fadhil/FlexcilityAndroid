@@ -39,14 +39,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".VerifyCodeActivity" />
-        <activity android:name=".EnterPasswordActivity" />
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
-        <activity
-            android:name=".DashboardActivity"
-            android:label="@string/title_activity_dashboard"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
