@@ -45,4 +45,7 @@
     <string name="header_image_description">Header image for navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="project_image">Project Image</string>
+    <string name="project_name">Project Name</string>
+
 </resources>

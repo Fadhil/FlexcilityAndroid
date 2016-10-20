@@ -16,12 +16,12 @@ public class DummyContent {
     /**
      * An array of sample (dummy) items.
      */
-    public static final List<DummyItem> ITEMS = new ArrayList<DummyItem>();
+    public static final List<DummyItem> ITEMS = new ArrayList<>();
 
     /**
      * A map of sample (dummy) items, by ID.
      */
-    public static final Map<String, DummyItem> ITEM_MAP = new HashMap<String, DummyItem>();
+    public static final Map<String, DummyItem> ITEM_MAP = new HashMap<>();
 
     private static final int COUNT = 25;
 
@@ -55,12 +55,13 @@ public class DummyContent {
      */
     public static class DummyItem {
         public final String id;
+        public final String name;
         public final String content;
         public final String details;
 
-
         public DummyItem(String id, String content, String details) {
             this.id = id;
+            this.name = "Project " + id;
             this.content = content;
             this.details = details;
         }
