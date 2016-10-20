@@ -60,14 +60,7 @@ public class MainActivity extends AppCompatActivity
             Intent loginIntent = new Intent(this, LoginActivity.class);
             startActivity(loginIntent);
         }
-   /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-    fab.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_SHORT)
-                    .setAction("Action", null).show();
-        }
-    });*/
+
 
 
     }

@@ -47,5 +47,6 @@
     <string name="action_settings">Settings</string>
     <string name="project_image">Project Image</string>
     <string name="project_name">Project Name</string>
+    <string name="project_description">Project Description</string>
 
 </resources>
