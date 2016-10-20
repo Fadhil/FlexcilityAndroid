@@ -14,9 +14,13 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import com.jomcode.flexcility.dummy.DummyContent;
 
 public class MainActivity extends AppCompatActivity
-    implements NavigationView.OnNavigationItemSelectedListener, DashboardFragment.OnFragmentInteractionListener {
+    implements NavigationView.OnNavigationItemSelectedListener, DashboardFragment.OnFragmentInteractionListener,
+    ProjectFragment.OnListFragmentInteractionListener {
     public static final String PREFS_NAME = "FlexcilityPrefs";
     public static final String USER_PHONE_NUMBER = "com.jomcode.flexcility.USER_PHONE_NUMBER";
 
@@ -115,7 +119,7 @@ public class MainActivity extends AppCompatActivity
             fragment = new DashboardFragment();
         } else if (id == R.id.nav_projects) {
             Log.d("DEBUG", "In Projects Index");
-            //fragment = new ProjectFragment();
+            fragment = new ProjectFragment();
         } else if (id == R.id.nav_work_requests) {
 
         } else if (id == R.id.nav_work_orders) {
@@ -124,7 +128,7 @@ public class MainActivity extends AppCompatActivity
 
         fragment.setArguments(getIntent().getExtras());
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.fragment_container, fragment).commit();
+                .replace(R.id.fragment_container, fragment).commit();
         item.setChecked(true);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -134,6 +138,15 @@ public class MainActivity extends AppCompatActivity
     public void onFragmentInteraction(Uri uri){
 
         //you can leave it empty
+    }
+    @Override
+    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+        //DisplayMetrics metrics = getResources().getDisplayMetrics();
+
+        //String message = Float.toString(metrics.density);
+
+        Toast toast = Toast.makeText(this,item.toString(),Toast.LENGTH_SHORT);
+        toast.show();
     }
 }
 
