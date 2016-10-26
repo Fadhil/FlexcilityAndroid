@@ -78,9 +78,4 @@ public class ProjectDetailsStep extends AbstractStep {
         return "<b>You must click!</b> <small>this is the condition!</small>";
     }
 
-    public void openGallery(View view) {
-        Intent intent = new Intent(Intent.ACTION_PICK,
-                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        startActivityForResult(intent, 0);
-    }
 }
