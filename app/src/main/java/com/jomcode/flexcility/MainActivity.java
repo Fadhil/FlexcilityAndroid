@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+import android.support.annotation.NonNull;
 
 import com.jomcode.flexcility.dummy.DummyContent;
 
@@ -99,7 +100,7 @@ public class MainActivity extends AppCompatActivity
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -119,13 +120,22 @@ public class MainActivity extends AppCompatActivity
 
         }
 
+        showFragment(fragment);
+
+        closeDrawer(item);
+        return true;
+    }
+
+    public void showFragment(Fragment fragment) {
         fragment.setArguments(getIntent().getExtras());
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, fragment).commit();
+    }
+
+    private void closeDrawer(MenuItem item) {
         item.setChecked(true);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
-        return true;
     }
 
     public void onFragmentInteraction(Uri uri){
