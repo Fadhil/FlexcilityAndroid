@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity
     public void showFragment(Fragment fragment) {
         fragment.setArguments(getIntent().getExtras());
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_container, fragment).commit();
+                .replace(R.id.fragment_container, fragment).addToBackStack(fragment.toString()).commit();
     }
 
     private void closeDrawer(MenuItem item) {
