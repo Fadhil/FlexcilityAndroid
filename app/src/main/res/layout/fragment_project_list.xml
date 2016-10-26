@@ -9,8 +9,6 @@
         android:name="com.jomcode.flexcility.ProjectFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
         app:layoutManager="LinearLayoutManager"
         tools:context="com.jomcode.flexcility.ProjectFragment"
         tools:listitem="@layout/fragment_project" />
@@ -19,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
-        app:fabSize="mini"
+        app:fabSize="normal"
         app:srcCompat="@drawable/fab_add"
         android:id="@+id/addProjectFab"
         android:layout_weight="1"
