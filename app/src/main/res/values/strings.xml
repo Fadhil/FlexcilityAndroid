@@ -12,6 +12,7 @@
     <string name="could_not_connect_to_network">No network detected. Check your connection settings and try again.</string>
     <string name="check_connection_and_try_again">You might want to check your connection settings and try again. </string>
     <string name="verification_code_sent">A verification code has been sent to the number </string>
+    <string name="action_save">Save</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="dashboard_fragment">Dashboard Fragment</string>

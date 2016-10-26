@@ -1,6 +1,7 @@
 package com.jomcode.flexcility;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -72,7 +73,9 @@ public class ProjectFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(getContext(), ProjectFormStepper.class);
+                Log.d("DEBUG", intent.toString());
+                startActivity(intent);
                /* Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_SHORT)
                         .setAction("Action", null).show(); */
             }
