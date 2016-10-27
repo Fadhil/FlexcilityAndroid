@@ -50,11 +50,9 @@ public class ProjectFormStepper extends ProgressStepper implements DashboardFrag
 
     @Override
     public void onComplete(Bundle data) {
-        setContentView(R.layout.activity_main);
-        Fragment fragment = new DashboardFragment();
-        fragment.setArguments(getIntent().getExtras());
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_container, fragment).commit();
+        Log.d("DEBUG", "Completed!");
+        // Here's where we should save the data, etc.
+        finish();
     }
 
     public void onFragmentInteraction(Uri uri){
