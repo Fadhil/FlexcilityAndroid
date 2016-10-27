@@ -29,6 +29,8 @@ import static android.app.Activity.RESULT_OK;
 
 /**
  * Created by fadhil on 26/10/2016.
+ *
+ * This generates the Project Details form
  */
 
 public class ProjectDetailsStep extends AbstractStep {
@@ -53,6 +55,7 @@ public class ProjectDetailsStep extends AbstractStep {
                 if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
                     return true;
                 }
+
                 if (ContextCompat.checkSelfPermission(getContext(), READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
                     return true;
                 }
