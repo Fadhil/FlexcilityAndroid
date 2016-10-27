@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.widget.ImageButton;
 
@@ -18,7 +19,7 @@ import java.io.FileNotFoundException;
  * This is the Main Project Form Stepper in which we'll add the Details and Address forms
  */
 
-public class ProjectFormStepper extends ProgressStepper {
+public class ProjectFormStepper extends ProgressStepper implements DashboardFragment.OnFragmentInteractionListener{
     @Override
     protected void onCreate(Bundle savedInstanceState){
         setErrorTimeout(1500);
@@ -44,5 +45,20 @@ public class ProjectFormStepper extends ProgressStepper {
             }
 
         }
+    }
+
+
+    @Override
+    public void onComplete(Bundle data) {
+        setContentView(R.layout.activity_main);
+        Fragment fragment = new DashboardFragment();
+        fragment.setArguments(getIntent().getExtras());
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, fragment).commit();
+    }
+
+    public void onFragmentInteraction(Uri uri){
+
+        //you can leave it empty
     }
 }
