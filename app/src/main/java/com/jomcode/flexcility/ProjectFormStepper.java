@@ -52,7 +52,9 @@ public class ProjectFormStepper extends ProgressStepper implements DashboardFrag
     public void onComplete(Bundle data) {
         Log.d("DEBUG", "Completed!");
         // Here's where we should save the data, etc.
+        Intent mainIntent = new Intent(this,MainActivity.class);
         finish();
+
     }
 
     public void onFragmentInteraction(Uri uri){

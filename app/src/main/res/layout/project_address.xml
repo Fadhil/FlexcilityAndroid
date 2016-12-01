@@ -20,7 +20,6 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/project_address"
                 android:imeActionId="@+id/projectAddress"
-                android:imeActionLabel="@string/action_sign_in_short"
                 android:imeOptions="actionUnspecified"
                 android:inputType="textMultiLine"
                 android:maxLines="5"/>

@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity
 
             NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
-            DashboardFragment dashboard = new DashboardFragment();
+            ProjectFragment dashboard = new ProjectFragment();
             dashboard.setArguments(getIntent().getExtras());
 
             getSupportFragmentManager().beginTransaction()
@@ -64,6 +64,14 @@ public class MainActivity extends AppCompatActivity
 
 
 
+    }
+
+    @Override
+    protected void onRestart(){
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME,0);
+        Integer userId = settings.getInt("userId", 0);
+        Log.d("DEBUG", "Restarting main activity" + userId);
+        super.onRestart();
     }
 
     @Override

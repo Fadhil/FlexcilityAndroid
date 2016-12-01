@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "675111668097",
+    "project_id": "flexcility-148507"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:675111668097:android:93ab80e577d91bbb",
+        "android_client_info": {
+          "package_name": "com.jomcode.flexcility"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "675111668097-4g7huicmvh4tms30m2vrhkugemp020f3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jomcode.flexcility",
+            "certificate_hash": "AA9872607BC8184802C54F23E5DB8664B3C1291C"
+          }
+        },
+        {
+          "client_id": "675111668097-40kaue3daehbq9udft6p254bf88fl9nm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDG0jcvK0_OuUwVZMNOK_w29oenFCJNbRw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
