@@ -17,15 +17,6 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="dashboard_fragment">Dashboard Fragment</string>
     <string name="ok">OK</string>
-    <string name="hallo_faruq">Hallo Faruq!</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password (optional)</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="error_field_required">This field is required</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
@@ -45,9 +36,18 @@
 
     <string name="header_image_description">Header image for navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
     <string name="project_image">Project Image</string>
     <string name="project_name">Project Name</string>
     <string name="project_description">Project Description</string>
     <string name="project_address">Address</string>
+
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="title_activity_register">RegisterActivity</string>
+
+    <string name="title_activity_forgot">ForgotPassActivity</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="facebook_app_id">Your facebook app id</string>
 </resources>
