@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryDark">#303f9f</color>
     <color name="colorAccent">#FF4081</color>
 
 <color name="app_primary">#008080</color>
@@ -20,6 +20,7 @@
 <item name="top_main_menu" type="color">#45645C</item>
 <item name="top_main_menu30" type="color">#640d4d0e</item>
 <item name="btn_background" type="color">#ff424242</item>
+<item name="transparent_grey" type="color">#8888</item>
 
 <color name="top_item">#a6c</color>
 <color name="sticky_item">#45645C</color>
