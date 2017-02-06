@@ -21,7 +21,7 @@ import com.jomcode.flexcility.dummy.DummyContent;
 
 public class MainActivity extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener, DashboardFragment.OnFragmentInteractionListener,
-    ProjectFragment.OnListFragmentInteractionListener {
+    ProjectFragment.OnListFragmentInteractionListener, ProjectGridFragment.OnListFragmentInteractionListener {
     public static final String PREFS_NAME = "FlexcilityPrefs";
     public static final String USER_PHONE_NUMBER = "com.jomcode.flexcility.USER_PHONE_NUMBER";
 
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity
             fragment = new DashboardFragment();
         } else if (id == R.id.nav_projects) {
             Log.d("DEBUG", "In Projects Index");
-            fragment = new ProjectFragment();
+            fragment = ProjectGridFragment.newInstance(2);
         } else if (id == R.id.nav_work_requests) {
 
         } else if (id == R.id.nav_work_orders) {
