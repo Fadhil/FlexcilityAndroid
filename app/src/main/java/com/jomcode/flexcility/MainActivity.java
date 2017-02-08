@@ -3,25 +3,25 @@ package com.jomcode.flexcility;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
-import android.support.annotation.NonNull;
 
-import com.jomcode.flexcility.dummy.DummyContent;
+import com.jomcode.flexcility.project.dummy.ProjectContent;
 
 public class MainActivity extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener, DashboardFragment.OnFragmentInteractionListener,
-    ProjectFragment.OnListFragmentInteractionListener, ProjectGridFragment.OnListFragmentInteractionListener {
+    com.jomcode.flexcility.project.ProjectFragment.OnListFragmentInteractionListener {
     public static final String PREFS_NAME = "FlexcilityPrefs";
     public static final String USER_PHONE_NUMBER = "com.jomcode.flexcility.USER_PHONE_NUMBER";
 
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity
 
             NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
-            ProjectFragment dashboard = new ProjectFragment();
+            DashboardFragment dashboard = new DashboardFragment();
             dashboard.setArguments(getIntent().getExtras());
 
             getSupportFragmentManager().beginTransaction()
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity
             fragment = new DashboardFragment();
         } else if (id == R.id.nav_projects) {
             Log.d("DEBUG", "In Projects Index");
-            fragment = ProjectGridFragment.newInstance(2);
+            fragment = new com.jomcode.flexcility.project.ProjectFragment();
         } else if (id == R.id.nav_work_requests) {
 
         } else if (id == R.id.nav_work_orders) {
@@ -150,13 +150,19 @@ public class MainActivity extends AppCompatActivity
 
         //you can leave it empty
     }
+//    @Override
+//    public void onListFragmentInteraction(ProjectContent.DummyItem item) {
+//        //DisplayMetrics metrics = getResources().getDisplayMetrics();
+//
+//        //String message = Float.toString(metrics.density);
+//
+//        Toast toast = Toast.makeText(this,item.toString(),Toast.LENGTH_SHORT);
+//        toast.show();
+//    }
+
     @Override
-    public void onListFragmentInteraction(DummyContent.DummyItem item) {
-        //DisplayMetrics metrics = getResources().getDisplayMetrics();
-
-        //String message = Float.toString(metrics.density);
-
-        Toast toast = Toast.makeText(this,item.toString(),Toast.LENGTH_SHORT);
+    public void onListFragmentInteraction(ProjectContent.ProjectItem item) {
+        Toast toast = Toast.makeText(this,item.toString(), Toast.LENGTH_SHORT);
         toast.show();
     }
 }

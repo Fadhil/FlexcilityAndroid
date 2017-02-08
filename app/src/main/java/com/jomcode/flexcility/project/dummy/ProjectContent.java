@@ -1,4 +1,4 @@
-package com.jomcode.flexcility.dummy;
+package com.jomcode.flexcility.project.dummy;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,39 +11,39 @@ import java.util.Map;
  * <p>
  * TODO: Replace all uses of this class before publishing your app.
  */
-public class DummyContent {
+public class ProjectContent {
 
     /**
      * An array of sample (dummy) items.
      */
-    public static final List<DummyItem> ITEMS = new ArrayList<>();
+    public static final List<ProjectItem> ITEMS = new ArrayList<ProjectItem>();
 
     /**
      * A map of sample (dummy) items, by ID.
      */
-    public static final Map<String, DummyItem> ITEM_MAP = new HashMap<>();
+    public static final Map<String, ProjectItem> ITEM_MAP = new HashMap<String, ProjectItem>();
 
     private static final int COUNT = 25;
 
     static {
         // Add some sample items.
         for (int i = 1; i <= COUNT; i++) {
-            addItem(createDummyItem(i));
+            addItem(createProjectItem(i));
         }
     }
 
-    private static void addItem(DummyItem item) {
+    private static void addItem(ProjectItem item) {
         ITEMS.add(item);
         ITEM_MAP.put(item.id, item);
     }
 
-    private static DummyItem createDummyItem(int position) {
-        return new DummyItem(String.valueOf(position), "Barang " + position, makeDetails(position));
+    private static ProjectItem createProjectItem(int position) {
+        return new ProjectItem(String.valueOf(position), "Porjects " + position, makeDetails(position));
     }
 
     private static String makeDetails(int position) {
         StringBuilder builder = new StringBuilder();
-        builder.append("Details about Barang: ").append(position);
+        builder.append("Details about Porject: ").append(position);
         for (int i = 0; i < position; i++) {
             builder.append("\nMore details information here.");
         }
@@ -53,15 +53,13 @@ public class DummyContent {
     /**
      * A dummy item representing a piece of content.
      */
-    public static class DummyItem {
+    public static class ProjectItem {
         public final String id;
-        public final String name;
         public final String content;
         public final String details;
 
-        public DummyItem(String id, String content, String details) {
+        public ProjectItem(String id, String content, String details) {
             this.id = id;
-            this.name = "Project " + id;
             this.content = content;
             this.details = details;
         }
