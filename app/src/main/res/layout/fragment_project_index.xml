@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
         <variable name="project"
             type="com.jomcode.flexcility.project.models.Project"/>
@@ -20,6 +21,11 @@
             android:layout_margin="@dimen/text_margin"
             android:text="@{project.name}"
             android:textAppearance="?attr/textAppearanceListItem" />
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:imageUrl="@{project.getImageUrl}" />
 
         <TextView
             android:id="@+id/content"
