@@ -1,6 +1,7 @@
 package com.jomcode.flexcility.project;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -55,8 +56,9 @@ public class ProjectFragment extends Fragment {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
 
-        projects.add(new Project("Project A", "An interesting Bind"));
-        projects.add(new Project("Another Project", "also very interesting"));
+        projects.add(new Project("Project A", "An interesting Bind","https://www.mylinea.com/wp-content/uploads/natural-beauty-wallpaper.jpg"));
+        projects.add(new Project("Another Project", "also very interesting","http://cdn.meme.am/instances/60677654.jpg"));
+        projects.add(new Project("A third", "should grid down correctly","https://c1.staticflickr.com/6/5341/30753956455_f456f2e7a6_b.jpg"));
 
     }
 
@@ -69,6 +71,13 @@ public class ProjectFragment extends Fragment {
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
+            if(getActivity().getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+                mColumnCount = 2;
+            }
+            else{
+                mColumnCount = 3;
+            }
+
             if (mColumnCount <= 1) {
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
             } else {

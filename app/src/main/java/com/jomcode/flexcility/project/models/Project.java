@@ -29,16 +29,16 @@ public class Project {
         return description;
     }
 
-    public Project(String name, String description){
+    public Project(String name, String description, String imageUrl){
         this.name = name;
         this.description = description;
-        this.imageUrl = "http://cdn.meme.am/instances/60677654.jpg";
+        this.imageUrl = imageUrl;
     }
 
     @BindingAdapter({"bind:imageUrl"})
     public static void loadImage(ImageView view, String theImageUrl) {
         Log.d("DEBUG", "Loading image " + theImageUrl + " into " + view.toString());
-        Glide.with(view.getContext()).load(theImageUrl).into(view);
+        Glide.with(view.getContext()).load(theImageUrl).centerCrop().into(view);
     }
 
     public void onClickProject(View view, Project project){
