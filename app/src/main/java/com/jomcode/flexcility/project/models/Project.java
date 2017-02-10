@@ -1,5 +1,7 @@
 package com.jomcode.flexcility.project.models;
 
+import android.content.Context;
+import android.content.Intent;
 import android.databinding.BindingAdapter;
 import android.util.Log;
 import android.view.View;
@@ -7,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.jomcode.flexcility.ProjectShowActivity;
 
 /**
  * Created by fadhil on 08/02/2017.
@@ -44,6 +47,9 @@ public class Project {
     public void onClickProject(View view, Project project){
         Toast toast = Toast.makeText(view.getContext(), project.getName(), Toast.LENGTH_SHORT);
         toast.show();
+        Context context = view.getContext();
+        Intent intent = new Intent(context, ProjectShowActivity.class);
+        context.startActivity(intent);
         Log.d("DEBUG", "clicked " + project.name);
     }
 }

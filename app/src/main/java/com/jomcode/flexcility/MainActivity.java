@@ -17,11 +17,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.jomcode.flexcility.dummy.DummyContent;
 import com.jomcode.flexcility.project.dummy.ProjectContent;
 
 public class MainActivity extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener, DashboardFragment.OnFragmentInteractionListener,
-    com.jomcode.flexcility.project.ProjectFragment.OnListFragmentInteractionListener {
+    com.jomcode.flexcility.project.ProjectFragment.OnListFragmentInteractionListener, ProjectFragment.OnListFragmentInteractionListener {
     public static final String PREFS_NAME = "FlexcilityPrefs";
     public static final String USER_PHONE_NUMBER = "com.jomcode.flexcility.USER_PHONE_NUMBER";
 
@@ -123,6 +124,8 @@ public class MainActivity extends AppCompatActivity
             Log.d("DEBUG", "In Projects Index");
             fragment = new com.jomcode.flexcility.project.ProjectFragment();
         } else if (id == R.id.nav_work_requests) {
+            Log.d("DEBUG", "The other Projects Index");
+            fragment = new ProjectFragment();
 
         } else if (id == R.id.nav_work_orders) {
 
@@ -150,15 +153,15 @@ public class MainActivity extends AppCompatActivity
 
         //you can leave it empty
     }
-//    @Override
-//    public void onListFragmentInteraction(ProjectContent.DummyItem item) {
-//        //DisplayMetrics metrics = getResources().getDisplayMetrics();
-//
-//        //String message = Float.toString(metrics.density);
-//
-//        Toast toast = Toast.makeText(this,item.toString(),Toast.LENGTH_SHORT);
-//        toast.show();
-//    }
+    @Override
+    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+        //DisplayMetrics metrics = getResources().getDisplayMetrics();
+
+        //String message = Float.toString(metrics.density);
+
+        Toast toast = Toast.makeText(this,item.toString(),Toast.LENGTH_SHORT);
+        toast.show();
+    }
 
     @Override
     public void onListFragmentInteraction(ProjectContent.ProjectItem item) {

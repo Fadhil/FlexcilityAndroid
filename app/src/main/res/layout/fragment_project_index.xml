@@ -35,25 +35,65 @@
                 android:id="@+id/imageView3" />
 
             <TextView
-                android:id="@+id/content"
+                android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.5"
-                android:Text="@{project.description}"
+                android:Text="@{project.name}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:layout_marginTop="2dp"
                 android:layout_marginLeft="2dp"/>
 
-            <TextView
-                android:id="@+id/id"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:layout_margin="@dimen/text_margin"
-                android:text="@{project.name}"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                card:layout_editor_absoluteY="0dp"
-                card:layout_editor_absoluteX="0dp" />
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp">
+                <TextView
+                    android:text="Technicians:"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:text="3"
+                    android:layout_marginLeft="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp">
+                <TextView
+                    android:text="Open WR:"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:text="3"
+                    android:layout_marginLeft="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginBottom="8dp">
+                <TextView
+                    android:text="Open WO:"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:text="1"
+                    android:layout_marginLeft="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
         </LinearLayout>
     </android.support.v7.widget.CardView>
 

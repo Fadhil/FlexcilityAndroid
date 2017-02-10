@@ -56,8 +56,8 @@ public class ProjectFragment extends Fragment {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
 
-        projects.add(new Project("Project A", "An interesting Bind","https://www.mylinea.com/wp-content/uploads/natural-beauty-wallpaper.jpg"));
-        projects.add(new Project("Another Project", "also very interesting","http://cdn.meme.am/instances/60677654.jpg"));
+        projects.add(new Project("Project A", "An interesting Bind","https://s-media-cache-ak0.pinimg.com/736x/32/23/eb/3223eb6b23a67083b3b5dc077f7554e0.jpg"));
+        projects.add(new Project("Another Project", "also very interesting","http://www.toxel.com/wp-content/uploads/2009/05/building08.jpg"));
         projects.add(new Project("A third", "should grid down correctly","https://c1.staticflickr.com/6/5341/30753956455_f456f2e7a6_b.jpg"));
 
     }
@@ -86,6 +86,7 @@ public class ProjectFragment extends Fragment {
 
             recyclerView.setAdapter(new MyProjectRecyclerViewAdapter(projects));
         }
+
         return view;
     }
 
