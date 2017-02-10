@@ -9,6 +9,7 @@ import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.content.Loader;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
@@ -537,8 +538,6 @@ public class LoginActivity extends AppCompatActivity implements
                     return pieces[1].equals(mPassword);
                 }
             }
-
-            // TODO: register the new account here.
             return true;
         }
 
@@ -548,6 +547,11 @@ public class LoginActivity extends AppCompatActivity implements
             showProgress(false);
 
             if (success) {
+                // TODO: register the new account here.
+                SharedPreferences settings = getSharedPreferences(MainActivity.PREFS_NAME,0);
+                SharedPreferences.Editor settingsEditor = settings.edit();
+                settingsEditor.putInt("userId", 1);
+                settingsEditor.commit();
                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 finish();
             } else {

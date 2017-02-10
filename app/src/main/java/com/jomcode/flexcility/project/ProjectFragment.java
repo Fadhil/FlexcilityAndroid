@@ -1,6 +1,7 @@
-package com.jomcode.flexcility;
+package com.jomcode.flexcility.project;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -10,8 +11,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.jomcode.flexcility.dummy.DummyContent;
-import com.jomcode.flexcility.dummy.DummyContent.DummyItem;
+import com.jomcode.flexcility.R;
+import com.jomcode.flexcility.project.dummy.ProjectContent.ProjectItem;
+import com.jomcode.flexcility.project.models.Project;
+
+import java.util.ArrayList;
 
 /**
  * A fragment representing a list of Items.
@@ -19,25 +23,25 @@ import com.jomcode.flexcility.dummy.DummyContent.DummyItem;
  * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
  * interface.
  */
-public class ProjectGridFragment extends Fragment {
+public class ProjectFragment extends Fragment {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters
     private int mColumnCount = 2;
     private OnListFragmentInteractionListener mListener;
-
+    private ArrayList<Project> projects = new ArrayList<>();
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public ProjectGridFragment() {
+    public ProjectFragment() {
     }
 
     // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
-    public static ProjectGridFragment newInstance(int columnCount) {
-        ProjectGridFragment fragment = new ProjectGridFragment();
+    public static ProjectFragment newInstance(int columnCount) {
+        ProjectFragment fragment = new ProjectFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
         fragment.setArguments(args);
@@ -51,24 +55,38 @@ public class ProjectGridFragment extends Fragment {
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
+
+        projects.add(new Project("Project A", "An interesting Bind","https://s-media-cache-ak0.pinimg.com/736x/32/23/eb/3223eb6b23a67083b3b5dc077f7554e0.jpg"));
+        projects.add(new Project("Another Project", "also very interesting","http://www.toxel.com/wp-content/uploads/2009/05/building08.jpg"));
+        projects.add(new Project("A third", "should grid down correctly","https://c1.staticflickr.com/6/5341/30753956455_f456f2e7a6_b.jpg"));
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_project_grid_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_project_index_list, container, false);
 
         // Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
+            if(getActivity().getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+                mColumnCount = 2;
+            }
+            else{
+                mColumnCount = 3;
+            }
+
             if (mColumnCount <= 1) {
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyProjectRecyclerGridViewAdapter(DummyContent.ITEMS, mListener));
+
+            recyclerView.setAdapter(new MyProjectRecyclerViewAdapter(projects));
         }
+
         return view;
     }
 
@@ -102,6 +120,7 @@ public class ProjectGridFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+
+        void onListFragmentInteraction(ProjectItem item);
     }
 }
