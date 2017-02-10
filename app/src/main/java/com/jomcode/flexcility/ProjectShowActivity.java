@@ -1,5 +1,6 @@
 package com.jomcode.flexcility;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -15,7 +16,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class ProjectShowActivity extends AppCompatActivity {
+import com.jomcode.flexcility.dummy.DummyContent;
+
+public class ProjectShowActivity extends AppCompatActivity implements ProjectShowFragment.OnFragmentInteractionListener {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -134,7 +137,12 @@ public class ProjectShowActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            switch (position) {
+                case 0:
+                    return new ProjectShowFragment();
+                default:
+                    return PlaceholderFragment.newInstance(position + 1);
+            }
         }
 
         @Override
@@ -157,5 +165,15 @@ public class ProjectShowActivity extends AppCompatActivity {
             }
             return null;
         }
+    }
+
+    public void onFragmentInteraction(Uri uri){
+
+        //you can leave it empty
+    }
+
+    public interface OnListFragmentInteractionListener {
+        // TODO: Update argument type and name
+        void onListFragmentInteraction(DummyContent.DummyItem item);
     }
 }
